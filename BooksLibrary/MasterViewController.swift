@@ -74,6 +74,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // TODO: add additional alerts to set the author and date fields
         book.title = title
         book.releaseDate = Date() as NSDate
+        book.author = "Unknown"
         
         // Save the context.
         do {
