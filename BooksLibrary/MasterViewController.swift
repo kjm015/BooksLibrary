@@ -37,14 +37,42 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     @objc
     func insertNewObject(_ sender: Any) {
-        let context = self.fetchedResultsController.managedObjectContext
-        let newBook = Book(context: context)
-             
-        // If appropriate, configure the new managed object.
-        newBook.releaseDate = Date() as NSDate
-        newBook.title = "Fun"
-        newBook.author = "Bill Mays"
+        // Create a prompt to enter a new Book
+        let alert = UIAlertController(title: "Add Book", message: "Add a new book title!", preferredStyle: .alert)
+        
+        // Save what they entered
+        let saveAction = UIAlertAction(title: "Save", style: .default) {
+            [unowned self] action in
 
+            guard let textField = alert.textFields?.first, let titleToSave = textField.text else {
+                return
+            }
+
+            // Call save function and update data in table view
+            self.save(title: titleToSave)
+            self.tableView.reloadData()
+        }
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+
+        // Add button functionality to the alert
+        alert.addTextField()
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+
+        // Show the alert
+        present(alert, animated: true)
+    }
+    
+    func save(title: String) {
+        let context = self.fetchedResultsController.managedObjectContext
+        
+        // Insert a new book into the context with given information
+        let entity = NSEntityDescription.entity(forEntityName: "Book", in: context)!
+        let book = Book(entity: entity, insertInto: context)
+        book.title = title
+        book.releaseDate = Date() as NSDate
+        
         // Save the context.
         do {
             try context.save()
