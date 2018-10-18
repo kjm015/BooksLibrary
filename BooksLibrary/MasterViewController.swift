@@ -22,10 +22,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
+        
         if let split = splitViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +42,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
              
         // If appropriate, configure the new managed object.
         newBook.releaseDate = Date() as NSDate
+        newBook.title = "Fun"
+        newBook.author = "Bill Mays"
 
         // Save the context.
         do {
