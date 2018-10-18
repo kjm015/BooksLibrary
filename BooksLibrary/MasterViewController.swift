@@ -70,6 +70,8 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         // Insert a new book into the context with given information
         let entity = NSEntityDescription.entity(forEntityName: "Book", in: context)!
         let book = Book(entity: entity, insertInto: context)
+        
+        // TODO: add additional alerts to set the author and date fields
         book.title = title
         book.releaseDate = Date() as NSDate
         
