@@ -14,6 +14,8 @@
 		931121672178D1690078228B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 931121652178D1690078228B /* Main.storyboard */; };
 		931121692178D1700078228B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 931121682178D1700078228B /* Assets.xcassets */; };
 		9311216C2178D1700078228B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9311216A2178D1700078228B /* LaunchScreen.storyboard */; };
+		931121752178D56A0078228B /* Book+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931121732178D56A0078228B /* Book+CoreDataClass.swift */; };
+		931121762178D56A0078228B /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931121742178D56A0078228B /* Book+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		931121682178D1700078228B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9311216B2178D1700078228B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9311216D2178D1700078228B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		931121732178D56A0078228B /* Book+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataClass.swift"; sourceTree = "<group>"; };
+		931121742178D56A0078228B /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 		9311215B2178D1690078228B /* BooksLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				931121732178D56A0078228B /* Book+CoreDataClass.swift */,
+				931121742178D56A0078228B /* Book+CoreDataProperties.swift */,
 				9311215C2178D1690078228B /* AppDelegate.swift */,
 				931121612178D1690078228B /* MasterViewController.swift */,
 				931121632178D1690078228B /* DetailViewController.swift */,
@@ -141,7 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				931121752178D56A0078228B /* Book+CoreDataClass.swift in Sources */,
 				931121602178D1690078228B /* BooksLibrary.xcdatamodeld in Sources */,
+				931121762178D56A0078228B /* Book+CoreDataProperties.swift in Sources */,
 				9311215D2178D1690078228B /* AppDelegate.swift in Sources */,
 				931121622178D1690078228B /* MasterViewController.swift in Sources */,
 				931121642178D1690078228B /* DetailViewController.swift in Sources */,
