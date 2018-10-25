@@ -2,7 +2,7 @@
 //  Book+CoreDataProperties.swift
 //  BooksLibrary
 //
-//  Created by Kevin Miyata on 10/18/18.
+//  Created by Kevin Miyata on 10/25/18.
 //  Copyright © 2018 Kevin Miyata. All rights reserved.
 //
 //
@@ -17,8 +17,8 @@ extension Book {
         return NSFetchRequest<Book>(entityName: "Book")
     }
 
-    @NSManaged public var title: String?
     @NSManaged public var author: String?
-    @NSManaged public var releaseDate: NSDate?
+    @NSManaged public var releaseDate: String?
+    @NSManaged public var title: String?
 
 }

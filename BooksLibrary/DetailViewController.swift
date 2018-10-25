@@ -18,7 +18,7 @@ class DetailViewController: UIViewController {
         // Update the user interface for the detail item.
         if let detail = detailItem {
             if let label = detailDescriptionLabel {
-                label.text = detail.releaseDate?.description
+                label.text = detail.releaseDate
             }
             if let label = titleLabel {
                 label.text = detail.title

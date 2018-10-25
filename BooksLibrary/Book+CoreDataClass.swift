@@ -2,7 +2,7 @@
 //  Book+CoreDataClass.swift
 //  BooksLibrary
 //
-//  Created by Kevin Miyata on 10/18/18.
+//  Created by Kevin Miyata on 10/25/18.
 //  Copyright © 2018 Kevin Miyata. All rights reserved.
 //
 //

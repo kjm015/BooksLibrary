@@ -38,25 +38,36 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     @objc
     func insertNewObject(_ sender: Any) {
         // Create a prompt to enter a new Book
-        let alert = UIAlertController(title: "Add Book", message: "Add a new book title!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add Book", message: "Add a new book!", preferredStyle: .alert)
         
         // Save what they entered
         let saveAction = UIAlertAction(title: "Save", style: .default) {
             [unowned self] action in
 
-            guard let textField = alert.textFields?.first, let titleToSave = textField.text else {
+            guard let textField = alert.textFields?.first, let titleToSave = textField.text,
+                let textField2 = alert.textFields?[1], let authorToSave = textField2.text,
+                let textField3 = alert.textFields?[2], let dateToSave = textField3.text else {
                 return
             }
 
             // Call save function and update data in table view
-            self.save(title: titleToSave)
+            self.save(title: titleToSave, author: authorToSave, date: dateToSave)
             self.tableView.reloadData()
         }
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .default)
 
         // Add button functionality to the alert
-        alert.addTextField()
+        alert.addTextField(configurationHandler: { (textField) in
+            textField.placeholder = "Title"
+        })
+        alert.addTextField(configurationHandler: { (textField2) in
+            textField2.placeholder = "Author"
+        })
+        alert.addTextField(configurationHandler: { (textField3) in
+            textField3.placeholder = "Date Published"
+        })
+        
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
 
@@ -64,7 +75,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         present(alert, animated: true)
     }
     
-    func save(title: String) {
+    func save(title: String, author: String, date: String) {
         let context = self.fetchedResultsController.managedObjectContext
         
         // Insert a new book into the context with given information
@@ -73,8 +84,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         // TODO: add additional alerts to set the author and date fields
         book.title = title
-        book.releaseDate = Date() as NSDate
-        book.author = "Unknown"
+        
+        if !date.isEmpty {
+            book.releaseDate = date
+        } else {
+            book.releaseDate = Date().description
+        }
+        
+        book.author = author
         
         // Save the context.
         do {

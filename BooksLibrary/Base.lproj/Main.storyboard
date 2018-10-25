@@ -52,13 +52,21 @@
                                 <color key="textColor" red="0.67721826424870468" green="0.0" blue="0.047235027237985554" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Published" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiY-GI-c3r">
+                                <rect key="frame" x="131.5" y="281.5" width="112.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uXn-1e-BDg" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="9Ii-3F-kg4"/>
+                            <constraint firstItem="0XM-y9-sOw" firstAttribute="top" secondItem="aiY-GI-c3r" secondAttribute="bottom" constant="8.5" id="C2P-98-HEi"/>
                             <constraint firstItem="46o-gb-ATh" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="Gfz-ch-03P"/>
                             <constraint firstItem="46o-gb-ATh" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="NMM-BS-h5S"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="leading" secondItem="svH-Pt-448" secondAttribute="leading" constant="20" symbolic="YES" id="Tsc-yG-G1q"/>
+                            <constraint firstItem="aiY-GI-c3r" firstAttribute="centerX" secondItem="svH-Pt-448" secondAttribute="centerX" id="WXv-Hg-uJ8"/>
                             <constraint firstItem="uXn-1e-BDg" firstAttribute="top" secondItem="46o-gb-ATh" secondAttribute="bottom" constant="8" id="bzS-xB-3ch"/>
                             <constraint firstItem="0XM-y9-sOw" firstAttribute="centerY" secondItem="svH-Pt-448" secondAttribute="centerY" id="jWN-iV-94e"/>
                             <constraint firstAttribute="trailing" secondItem="0XM-y9-sOw" secondAttribute="trailing" constant="20" symbolic="YES" id="tHV-ZD-HQj"/>
